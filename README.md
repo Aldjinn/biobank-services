@@ -7,7 +7,7 @@ Just run DataserviceApplication to get the application up and running.
 ## Example requests
 
 ```bash
-curl http://localhost:8080/doctor/42
+curl http://localhost:8080/doctor/1024
 ```
 
 ## Swagger
