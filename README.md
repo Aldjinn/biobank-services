@@ -14,6 +14,10 @@ curl http://localhost:8080/doctor/42
 
 Just open http://localhost:8080/swagger-ui/. The API is available under http://localhost:8080/v2/api-docs.
 
+## H2-Console
+
+Open http://localhost:8080/h2-console/ and login with **sa** and **password** using database **jdbc:h2:mem:testdb**.
+
 ## Docker
 
 ### Build
