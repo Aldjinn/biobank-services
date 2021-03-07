@@ -2,7 +2,7 @@ package de.biobank.dataservice.controller;
 
 import de.biobank.dataservice.entity.Doctor;
 import de.biobank.dataservice.entity.Profession;
-import de.biobank.dataservice.repository.DoctorRepository;
+import de.biobank.dataservice.mapper.DoctorMapper;
 import io.restassured.RestAssured;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.http.HttpStatus;
@@ -11,8 +11,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.boot.web.server.LocalServerPort;
-
-import java.util.Optional;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
@@ -26,7 +24,7 @@ public class DoctorControllerTest {
     private int port;
 
     @MockBean
-    private DoctorRepository doctorRepository;
+    private DoctorMapper doctorRepository;
 
     @BeforeEach
     public void setup() {
@@ -35,14 +33,14 @@ public class DoctorControllerTest {
 
     @Test
     void getDoctor() {
-        when(doctorRepository.findById(42L)).thenReturn(Optional.of(Doctor.builder()
+        when(doctorRepository.getDoctorById(42L)).thenReturn(Doctor.builder()
                 .id(42L)
                 .firstName("Max")
                 .lastName("Musterarzt")
                 .zip("12345")
                 .city("Musterhausen")
                 .profession(Profession.ALLGEMEINMEDIZIN)
-                .build()));
+                .build());
 
         given().log().all()
                 .when().get("/doctor/42")

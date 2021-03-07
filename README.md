@@ -28,9 +28,15 @@ build.bat
 docker build -t biobank-services .
 ```
 
-### Run
+### Run with Exasol
+
+Note: Your docker needs at least 4 GB of RAM to get Exasol up and running.
 
 ```bash
-docker run -p 8080:8080 --name biobank-services biobank-services
-docker stop biobank-services
+# start Exasol in Docker
+docker-compose up
 ```
+
+Or adjust the connection settings in **application-dev.yml** to use an Exasol running somewhere else.
+
+Now run the application with profile DEV: **spring_profiles_active=dev**

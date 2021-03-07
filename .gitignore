@@ -252,3 +252,6 @@ buildNumber.properties
 *.code-workspace
 
 # End of https://www.toptal.com/developers/gitignore/api/maven,java,vscode,intellij,eclipse
+
+exa_volume
+exasol-data

@@ -1,3 +1,4 @@
+name: default
 spring:
   datasource:
     url: jdbc:h2:mem:testdb
@@ -10,9 +11,3 @@ spring:
       enabled: true
       settings:
         web-allow-others: false
-
-  flyway:
-    sql-migration-prefix: V
-    repeatable-sql-migration-prefix: R
-    sql-migration-separator: __
-    sql-migration-suffixes: .sql

@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  exasol:
+    container_name: biobank-exasol
+    image: exasol/docker-db:latest-7.0
+    ports:
+      - 8563:8563
+    volumes:
+    - ./exasol-data:/exa
+    environment:
+      - FOO=bar
+    privileged: true

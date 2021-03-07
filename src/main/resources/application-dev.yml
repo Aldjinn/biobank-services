@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    url: jdbc:exa:127.0.0.1..1:8563;schema=SYS
+    driver-class-name: com.exasol.jdbc.EXADriver
+    username: sys
+    password: exasol
+
+  h2:
+    console:
+      enabled: false
